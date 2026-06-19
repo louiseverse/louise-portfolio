@@ -4,13 +4,13 @@ const skills = [
   { name: "TypeScript", icon: "/skills/typescript.png" },
   { name: "JavaScript", icon: "/skills/javascript.png" },
   { name: "Python", icon: "/skills/python.png" },
+  { name: "Next.js", icon: "/skills/nextjs.png" },
   { name: "HTML", icon: "/skills/html.png" },
   { name: "CSS", icon: "/skills/css.png" },
   { name: "Firebase", icon: "/skills/firebase.png" },
   { name: "WordPress", icon: "/skills/wordpress.png" },
   { name: "Adobe Photoshop", icon: "/skills/photoshop.png" },
   { name: "Blender", icon: "/skills/blender.png" },
-  { name: "Vibe Coding", icon: "/skills/code.png" },
 ];
 
 export default function Skills() {
@@ -21,7 +21,7 @@ export default function Skills() {
     >
       {/* LEFT CIRCLE CONTINUATION */}
       <div
-  className="absolute -left-[24vw] -top-[48vw] h-[58vw] w-[58vw] rounded-full bg-[#c7cdd0]"
+  className="absolute -left-[23.6vw] -top-[48vw] h-[58vw] w-[58vw] rounded-full bg-[#c7cdd0]"
         style={{
           backgroundImage:
             "radial-gradient(rgba(255,255,255,.85) 1.5px, transparent 1.5px)",
@@ -49,7 +49,7 @@ export default function Skills() {
         {/* Header */}
         <div className="text-center">
           <h2 className="text-5xl font-extrabold text-[#344754] lg:text-6xl">
-            Technical stack
+            Tech stack
           </h2>
 
           <p className="mt-6 text-lg text-[#66737b] lg:text-xl">

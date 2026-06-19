@@ -3,7 +3,7 @@ import Image from "next/image";
 const socials = [
   {
     label: "Facebook",
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/louise.soledad.7",
     icon: (
       <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5">
         <path
@@ -15,7 +15,7 @@ const socials = [
   },
   {
     label: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/louiseeverse",
     icon: (
       <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5">
         <path
@@ -40,7 +40,7 @@ const socials = [
   },
   {
     label: "GitHub",
-    href: "https://github.com",
+    href: "https://github.com/louiseverse",
     icon: (
       <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5">
         <path
@@ -104,19 +104,13 @@ export default function Hero() {
           </h1>
 
           <h2 className="mt-2 max-w-full whitespace-normal text-[20px] font-extrabold leading-tight tracking-normal text-[#2f4452] sm:max-w-[560px] sm:text-[27px] lg:whitespace-nowrap">
-            Web Developer & Creative Coder
+            Aspiring Software Developer
           </h2>
 
           <p className="mt-9 max-w-full text-[18px] font-medium leading-[1.38] tracking-normal text-[#233845] sm:max-w-[545px] sm:text-[21px] lg:mt-12">
-            <span className="sm:block">
-              <span className="block sm:inline">
-                I build fast, responsive, and
-              </span>
-              {" "}
-              <span className="block sm:inline">user-friendly websites</span>
-            </span>
-            <span className="sm:block">that bring ideas to life.</span>
-          </p>
+  Building digital solutions that combine creativity,
+  technology, and problem-solving.
+</p>
 
           <div className="mt-11 flex flex-wrap items-center gap-6 lg:mt-16">
             <a
@@ -143,7 +137,7 @@ export default function Hero() {
             height={2048}
             preload
             sizes="780px"
-            className="pointer-events-none absolute left-[-112px] top-[140px] z-20 h-[780px] w-[780px] select-none object-contain grayscale brightness-90"
+            className="pointer-events-none absolute left-[-130px] top-[110px] z-20 h-[900px] w-[950px] select-none object-contain grayscale brightness-90"
           />
         </div>
       </div>

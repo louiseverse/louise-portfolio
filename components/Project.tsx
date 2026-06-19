@@ -88,8 +88,9 @@ export default function Project() {
         #ececec 0%,
         #ececec 40%,
         #d6dcdf 55%,
-        #7b8a92 78%,
-        #263941 100%
+        #7b8a92 70%,
+        #233239 88%,
+        #233239 100%
       )
     `,
   }}
@@ -97,7 +98,7 @@ export default function Project() {
 
 {/* DOTS OVERLAY */}
 <div
-  className="absolute top-[38%] left-0 right-0 bottom-0"
+  className="absolute top-[40%] left-0 right-0 bottom-0"
   style={{
     backgroundImage:
       "radial-gradient(rgba(255,255,255,.65) 1px, transparent 1px)",

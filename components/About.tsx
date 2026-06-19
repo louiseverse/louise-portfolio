@@ -37,9 +37,9 @@ export default function About() {
           
           {/* Image */}
           <div className="flex justify-center">
-            <div className="relative h-[550px] w-[550px] overflow-hidden">
+            <div className="relative h-[650px] w-[650px] overflow-hidden">
               <Image
-                src="/ale.jpg"
+                src="/louise.jpg"
                 alt="Louise"
                 fill
                 priority
@@ -55,10 +55,9 @@ export default function About() {
             </h2>
 
             <p className="text-lg leading-[1.9] text-[#66737b] lg:text-xl">
-              I'm Louise, a passionate web developer with a background in
-              computer science. I enjoy building modern, responsive, and
-              user-friendly websites. I focus on writing clean code and
-              creating smooth user experiences that bring ideas to life.
+              I’m Louise, a graduating Computer Science student passionate about building meaningful and impactful technology. 
+              My experience spans web development and machine learning-based systems where I developed strong problem-solving 
+              and system design skills.
             </p>
           </div>
         </div>
