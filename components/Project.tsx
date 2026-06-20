@@ -131,22 +131,22 @@ export default function Project() {
   }}
 />
 
-      <div className="relative z-10 mx-auto max-w-[1400px] px-10 pb-20 pt-32">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-4 pb-14 pt-24 sm:px-6 sm:pb-20 sm:pt-28 lg:px-10 lg:pt-32">
         {/* HEADER */}
-        <div className="text-center">
-          <h2 className="text-5xl font-extrabold text-[#344754] lg:text-6xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-4xl font-extrabold text-[#344754] sm:text-5xl lg:text-6xl">
             Featured Projects
           </h2>
 
-          <p className="mt-6 text-lg text-[#66737b] lg:text-xl">
+          <p className="mt-4 text-base leading-relaxed text-[#66737b] sm:mt-6 sm:text-lg lg:text-xl">
             Selected work that showcases my design and development skills.
           </p>
         </div>
 
         {/* FEATURED PROJECT */}
-        <div className="mt-16 overflow-hidden rounded-[32px] border-2 border-[#7b8a92] bg-white/20 backdrop-blur-sm">
+        <div className="mt-10 overflow-hidden rounded-2xl border-2 border-[#7b8a92] bg-white/20 backdrop-blur-sm sm:mt-16 sm:rounded-[32px]">
           <div className="grid lg:grid-cols-2">
-  <div className="relative min-h-[560px] overflow-hidden">
+  <div className="relative min-h-[300px] overflow-hidden sm:min-h-[420px] lg:min-h-[560px]">
   <Image
     src={featuredProject.images[currentImage]}
     alt={featuredProject.title}
@@ -163,7 +163,7 @@ export default function Project() {
           : prev - 1
       )
     }
-    className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/40 px-4 py-2 text-xl text-white backdrop-blur-sm"
+    className="absolute left-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-xl text-white backdrop-blur-sm sm:left-4 sm:h-12 sm:w-12"
   >
     ‹
   </button>
@@ -177,18 +177,18 @@ export default function Project() {
           : prev + 1
       )
     }
-    className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/40 px-4 py-2 text-xl text-white backdrop-blur-sm"
+    className="absolute right-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-xl text-white backdrop-blur-sm sm:right-4 sm:h-12 sm:w-12"
   >
     ›
   </button>
 
   {/* DOTS */}
-  <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 gap-2">
+  <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 gap-2 sm:bottom-5">
     {featuredProject.images.map((_, index) => (
       <button
         key={index}
         onClick={() => setCurrentImage(index)}
-        className={`h-3 w-3 rounded-full transition ${
+        className={`h-2.5 w-2.5 rounded-full transition sm:h-3 sm:w-3 ${
           currentImage === index
             ? "bg-white"
             : "bg-white/40"
@@ -198,36 +198,36 @@ export default function Project() {
   </div>
 </div>
 
-            <div className="flex flex-col justify-center p-10 lg:p-14">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[4px] text-[#263941]">
+            <div className="flex flex-col justify-center p-5 sm:p-8 lg:p-14">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[3px] text-[#263941] sm:text-sm sm:tracking-[4px]">
                 Featured Project
               </p>
 
-              <h3 className="text-4xl font-bold text-[#344754]">
+              <h3 className="text-3xl font-bold text-[#344754] sm:text-4xl">
                 {featuredProject.title}
               </h3>
 
-              <p className="mt-6 text-lg leading-relaxed text-[#66737b]">
+              <p className="mt-4 text-base leading-relaxed text-[#66737b] sm:mt-6 sm:text-lg">
                 {featuredProject.description}
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-6 flex flex-wrap gap-2 sm:mt-8 sm:gap-3">
                 {featuredProject.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full border border-[#263941] px-4 py-2 text-sm text-[#263941]"
+                    className="rounded-full border border-[#263941] px-3 py-1.5 text-xs text-[#263941] sm:px-4 sm:py-2 sm:text-sm"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
 
-              <div className="mt-10 flex gap-4">
+              <div className="mt-8 flex gap-4 sm:mt-10">
   <a
     href={featuredProject.github}
     target="_blank"
     rel="noopener noreferrer"
-    className="rounded-full bg-[#263941] px-6 py-3 text-white transition hover:opacity-90"
+    className="w-full rounded-full bg-[#263941] px-6 py-3 text-center text-white transition hover:opacity-90 sm:w-auto"
   >
     View on GitHub
   </a>
@@ -237,13 +237,13 @@ export default function Project() {
         </div>
 
         {/* SMALL PROJECTS */}
-        <div className="mt-10 grid gap-8 md:grid-cols-2">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:mt-10 lg:gap-8">
           {projects.map((project) => (
             <div
               key={project.title}
-              className="overflow-hidden rounded-[24px] border-2 border-[#7b8a92] bg-[#edf0f1]/90 shadow-[0_16px_34px_rgba(20,35,45,0.12)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+              className="overflow-hidden rounded-2xl border-2 border-[#7b8a92] bg-[#edf0f1]/90 shadow-[0_16px_34px_rgba(20,35,45,0.12)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:rounded-[24px] sm:hover:-translate-y-2"
             >
-              <div className="relative h-[240px]">
+              <div className="relative aspect-[16/10] min-h-[190px] sm:h-[240px] sm:aspect-auto">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -252,18 +252,18 @@ export default function Project() {
                 />
               </div>
 
-              <div className="bg-[#edf0f1]/95 p-6">
-                <h3 className="text-2xl font-bold text-[#243641]">
+              <div className="bg-[#edf0f1]/95 p-5 sm:p-6">
+                <h3 className="text-xl font-bold leading-tight text-[#243641] sm:text-2xl">
                   {project.title}
                 </h3>
 
-                <p className="mt-3 leading-relaxed text-[#334650]">
+                <p className="mt-3 text-sm leading-relaxed text-[#334650] sm:text-base">
   {project.description}
 </p>
 
                 <button
   onClick={() => setSelectedProject(project)}
-  className="mt-5 rounded-full border border-[#263941] px-5 py-2 text-[#263941] transition hover:bg-[#263941] hover:text-white"
+  className="mt-5 w-full rounded-full border border-[#263941] px-5 py-2 text-[#263941] transition hover:bg-[#263941] hover:text-white sm:w-auto"
 >
   View Project
 </button>
@@ -276,27 +276,27 @@ export default function Project() {
 
       {selectedProject && (
         <div
-          className="scrollbar-hide fixed inset-0 z-[999] overflow-y-auto bg-black/70 p-4 sm:p-6"
+          className="scrollbar-hide fixed inset-0 z-[999] overflow-y-auto bg-black/70 p-3 sm:p-6"
           onClick={() => setSelectedProject(null)}
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="scrollbar-hide mx-auto my-6 max-h-[calc(100dvh-3rem)] w-full max-w-3xl overflow-y-auto rounded-3xl bg-white p-5 sm:my-8 sm:p-8"
+            className="scrollbar-hide mx-auto my-3 max-h-[calc(100dvh-1.5rem)] w-full max-w-3xl overflow-y-auto rounded-2xl bg-white p-4 sm:my-8 sm:max-h-[calc(100dvh-4rem)] sm:rounded-3xl sm:p-8"
           >
-            <div className="flex items-center justify-between">
-              <h2 className="text-3xl font-bold text-[#344754]">
+            <div className="flex items-start justify-between gap-4">
+              <h2 className="text-2xl font-bold leading-tight text-[#344754] sm:text-3xl">
                 {selectedProject.title}
               </h2>
 
               <button
                 onClick={() => setSelectedProject(null)}
-                className="text-3xl"
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-3xl leading-none text-[#344754] transition hover:bg-[#edf0f1]"
               >
                 ×
               </button>
             </div>
 
-            <div className="relative mt-6 h-[220px] overflow-hidden rounded-2xl sm:h-[300px]">
+            <div className="relative mt-5 aspect-[16/10] min-h-[180px] overflow-hidden rounded-xl sm:mt-6 sm:h-[300px] sm:aspect-auto sm:rounded-2xl">
               <Image
                 src={selectedProject.image}
                 alt={selectedProject.title}
@@ -305,7 +305,7 @@ export default function Project() {
               />
             </div>
 
-            <p className="mt-6 text-[#66737b]">
+            <p className="mt-5 text-sm leading-relaxed text-[#66737b] sm:mt-6 sm:text-base">
               {selectedProject.description}
             </p>
             <div className="mt-6">
@@ -313,7 +313,7 @@ export default function Project() {
     Features
   </h4>
 
-  <ul className="list-disc space-y-2 pl-5 text-[#66737b]">
+  <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-[#66737b] sm:text-base">
     {selectedProject.features.map((feature) => (
       <li key={feature}>{feature}</li>
     ))}
@@ -324,7 +324,7 @@ export default function Project() {
               {selectedProject.stack.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border border-[#263941] px-3 py-1 text-sm text-[#263941]"
+                  className="rounded-full border border-[#263941] px-3 py-1 text-xs text-[#263941] sm:text-sm"
                 >
                   {tech}
                 </span>
@@ -336,7 +336,7 @@ export default function Project() {
                 href={selectedProject.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-[#263941] px-5 py-2 text-white transition hover:opacity-90"
+                className="block w-full rounded-full bg-[#263941] px-5 py-2.5 text-center text-white transition hover:opacity-90 sm:inline-block sm:w-auto"
               >
                 View Website
               </a>

@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import JarvisAssistant from "@/components/JarvisAssistant";
 import ScrollControls from "@/components/ScrollControls";
+import CursorAnimation from "@/components/CursorAnimation";
+import LoadingScreen from "@/components/LoadingScreen";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -23,10 +25,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-black text-white">
+        <LoadingScreen />
         <Navbar />
         {children}
         <ScrollControls />
         <JarvisAssistant />
+        <CursorAnimation />
         <Footer />
       </body>
     </html>

@@ -25,6 +25,215 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.loading-screen-active,
+.loading-screen-active body {
+  overflow: hidden;
+}
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  min-height: 100dvh;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 56%, rgba(64, 83, 93, 0.18), transparent 32%),
+    linear-gradient(180deg, #111719 0%, #101415 52%, #0b0f10 100%);
+  color: #ffffff;
+}
+
+.loading-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(64, 83, 93, 0.16), transparent 26%),
+    radial-gradient(circle at 82% 78%, rgba(35, 50, 57, 0.22), transparent 30%);
+  pointer-events: none;
+}
+
+.loading-word-wrap {
+  position: relative;
+  z-index: 1;
+  width: min(82vw, 1120px);
+  padding-bottom: clamp(1.45rem, 3.2vw, 2.8rem);
+  backface-visibility: hidden;
+  transform-origin: center;
+  will-change: opacity, transform, filter;
+}
+
+.loading-screen-complete .loading-word-wrap {
+  animation: loadingWordZoom 1.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.loading-word-svg {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+  width: 100%;
+}
+
+.loading-svg-text {
+  font-family: "Arial Black", "Franklin Gothic Heavy", Impact, Arial, Helvetica, sans-serif;
+  font-size: 188px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.loading-svg-base {
+  fill: rgba(155, 165, 171, 0.24);
+}
+
+.loading-svg-fill {
+  fill: url(#loading-fill-gradient);
+}
+
+.loading-meta {
+  position: absolute;
+  bottom: clamp(0.1rem, 1vw, 0.65rem);
+  right: clamp(0.25rem, 1.2vw, 1rem);
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  color: #eeeeee;
+  font-size: clamp(0.86rem, 1.25vw, 1.05rem);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+@keyframes loadingWordZoom {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  48% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1.18);
+  }
+
+  78% {
+    opacity: 0.86;
+    transform: translate3d(0, 0, 0) scale(1.72);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(2.25);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-screen-complete .loading-word-wrap {
+    animation-duration: 0.24s;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: auto;
+  }
+}
+
+.portfolio-cursor-hotspot {
+  position: absolute;
+  height: 22px;
+  width: 16px;
+  border-radius: 76% 24% 68% 32% / 82% 34% 66% 18%;
+  background:
+    radial-gradient(circle at 46% 72%, #ffffff 0 12%, #e4e7e8 20%, transparent 44%),
+    linear-gradient(145deg, #ffffff 0%, #e4e7e8 28%, #9ba5ab 54%, #344754 74%, #263941 100%);
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.78),
+    0 0 18px rgba(52, 71, 84, 0.78);
+  transform: translate(-2px, -2px) rotate(-20deg);
+  transform-origin: 18% 18%;
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  animation: portfolioPointerFlame 0.58s ease-in-out infinite alternate;
+}
+
+.portfolio-cursor-hotspot-pressed {
+  transform: translate(-2px, -2px) rotate(-20deg) scale(1.24);
+}
+
+.portfolio-loader-container {
+  position: absolute;
+  animation: portfolioScaleUp 0.56s linear forwards;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.portfolio-loader {
+  position: absolute;
+  inset: 0;
+  border-radius: 13px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.78) 0 11%, transparent 32%),
+    linear-gradient(50deg, #263941 0%, #344754 30%, #9ba5ab 56%, #e4e7e8 78%, #ffffff 100%);
+  box-shadow:
+    0 0 20px rgba(228, 231, 232, 0.5),
+    0 0 42px rgba(38, 57, 65, 0.58);
+  filter: hue-rotate(0deg);
+  animation: portfolioFilterHue 2.5s linear infinite;
+}
+
+.portfolio-loader::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(6, 10, 25, 0.9) 0 48%, rgba(6, 10, 25, 0.18) 62%, transparent 72%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.16), transparent 70%);
+}
+
+@keyframes portfolioPointerFlame {
+  from {
+    border-radius: 76% 24% 68% 32% / 82% 34% 66% 18%;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.72)) drop-shadow(0 0 13px rgba(38, 57, 65, 0.7));
+  }
+
+  to {
+    border-radius: 58% 42% 76% 24% / 76% 42% 58% 24%;
+    filter: drop-shadow(0 0 9px rgba(255, 255, 255, 0.96)) drop-shadow(0 0 20px rgba(52, 71, 84, 0.9));
+  }
+}
+
+@keyframes portfolioFilterHue {
+  50% {
+    filter: hue-rotate(38deg);
+    transform: rotate(180deg);
+  }
+
+  100% {
+    filter: hue-rotate(76deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes portfolioScaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  45% {
+    opacity: 0.9;
+    transform: scale(0.55);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.25);
+  }
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
