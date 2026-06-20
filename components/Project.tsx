@@ -131,7 +131,8 @@ export default function Project() {
   }}
 />
 
-      <div className="relative z-10 mx-auto max-w-[1400px] px-4 pb-14 pt-24 sm:px-6 sm:pb-20 sm:pt-28 lg:px-10 lg:pt-32">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
+        <div className="flex min-h-screen flex-col justify-center pb-12 pt-24 sm:pb-16 sm:pt-28 lg:pb-20 lg:pt-32">
         {/* HEADER */}
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
@@ -235,9 +236,10 @@ export default function Project() {
             </div>
           </div>
         </div>
+        </div>
 
         {/* SMALL PROJECTS */}
-        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:mt-10 lg:gap-8">
+        <div className="grid gap-6 pb-14 pt-8 md:grid-cols-2 sm:pb-20 lg:gap-8 lg:pb-24 lg:pt-10">
           {projects.map((project) => (
             <div
               key={project.title}

@@ -10,11 +10,11 @@ export default function Home() {
       <Hero />
       <About />
       <section className="relative">
-        <div className="lg:sticky lg:top-0 lg:z-0 lg:h-screen lg:overflow-hidden">
+        <div className="sticky top-0 z-0 h-screen overflow-hidden">
           <Skills />
         </div>
 
-        <div className="relative z-10 lg:shadow-[0_-32px_80px_rgba(5,12,16,0.24)]">
+        <div className="relative z-10 shadow-[0_-32px_80px_rgba(5,12,16,0.24)]">
           <Project />
         </div>
       </section>
