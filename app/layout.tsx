@@ -4,6 +4,7 @@ import JarvisAssistant from "@/components/JarvisAssistant";
 import ScrollControls from "@/components/ScrollControls";
 import CursorAnimation from "@/components/CursorAnimation";
 import LoadingScreen from "@/components/LoadingScreen";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -32,6 +33,7 @@ export default function RootLayout({
         <JarvisAssistant />
         <CursorAnimation />
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
