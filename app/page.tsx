@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <About />
       <section className="relative">
-        <div className="sticky top-0 z-0 h-screen overflow-hidden">
+        <div className="relative z-0">
           <Skills />
         </div>
 

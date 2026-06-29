@@ -178,6 +178,8 @@ export default function Project() {
   src={featuredProject.images[currentImage]}
   alt={featuredProject.title}
   fill
+  preload
+  sizes="(max-width: 1023px) 100vw, 50vw"
   className="object-cover transition-all duration-500"
 />
 
@@ -276,6 +278,7 @@ export default function Project() {
                   src={project.images[0]}
                   alt={project.title}
                   fill
+                  sizes="(max-width: 767px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -333,6 +336,7 @@ export default function Project() {
   src={selectedProject.images[modalImageIndex]}
   alt={selectedProject.title}
   fill
+  sizes="(max-width: 767px) 100vw, 768px"
   className="object-cover"
 />
 
