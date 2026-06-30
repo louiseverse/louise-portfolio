@@ -11,8 +11,8 @@ import {
 const contactLinks = [
   {
     label: "Email:",
-    value: "louisesoledad55@gmail.com",
-    href: "mailto:louisesoledad55@gmail.com",
+    value: "soledad.louiseangelo@gmail.com",
+    href: "mailto:soledad.louiseangelo@gmail.com",
     icon: FaEnvelope,
   },
   {
@@ -24,7 +24,7 @@ const contactLinks = [
   {
     label: "Phone Number:",
     value: "09614044162",
-    href: "tel:09614044162",
+    href: "tel:09107216912",
     icon: FaPhoneAlt,
   },
 ];

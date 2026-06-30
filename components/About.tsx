@@ -1,22 +1,22 @@
 import Image from "next/image";
+import AboutStats from "@/components/AboutStats";
+
+const aboutLinks = [
+  { label: "github", href: "https://github.com/Louisesoledad" },
+  { label: "linkedin", href: "https://www.linkedin.com/in/louiseangelosoledad" },
+  { label: "instagram", href: "https://www.instagram.com/louiseeverse" },
+  { label: "facebook", href: "https://www.facebook.com/louise.soledad.7" },
+];
 
 export default function About() {
   return (
     <section
       id="about"
-      className="relative min-h-screen overflow-hidden bg-[#ececec] lg:h-screen"
+      className="relative min-h-screen overflow-hidden bg-[#ececec]"
     >
-      <div
-        className="absolute -left-[30vw] top-8 hidden h-[70vw] w-[70vw] rounded-full bg-[#c7cdd0] sm:block lg:-left-[24vw] lg:top-[2vw] lg:h-[58vw] lg:w-[58vw]"
-        style={{
-          backgroundImage:
-            "radial-gradient(rgba(255,255,255,.85) 1.5px, transparent 1.5px)",
-          backgroundSize: "18px 18px",
-        }}
-      />
 
       <div
-        className="absolute -bottom-[34vw] -right-[30vw] h-[78vw] w-[78vw] rounded-full sm:-right-[24vw] lg:-bottom-[45vw] lg:-right-[19.5vw] lg:h-[62vw] lg:w-[62vw]"
+        className="absolute -bottom-[34vw] -right-[30vw] h-[78vw] w-[78vw] rounded-full sm:-right-[24vw] lg:-bottom-[36vw] lg:-right-[19.5vw] lg:h-[62vw] lg:w-[62vw]"
         style={{
           background:
             "linear-gradient(90deg, #e4e7e8 0%, #9ba5ab 45%, #263941 100%)",
@@ -27,31 +27,49 @@ export default function About() {
         }}
       />
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] items-center justify-center px-5 py-24 sm:px-10 lg:h-full lg:min-h-0 lg:px-10 lg:py-0">
-        <div className="grid w-full grid-cols-1 items-center gap-10 md:gap-14 lg:grid-cols-2 lg:gap-16">
-          <div className="flex justify-center lg:mt-4">
-            <div className="relative aspect-[4/5] w-full max-w-[280px] overflow-hidden sm:max-w-[380px] md:max-w-[460px] lg:h-[720px] lg:w-[650px] lg:max-w-none">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1120px] flex-col items-center justify-center px-5 pt-32 pb-20 sm:pt-40 sm:pb-20 lg:pt-48 lg:pb-20">
+        <div className="grid w-full grid-cols-1 items-end gap-10 md:grid-cols-[minmax(260px,0.9fr)_minmax(320px,1fr)] md:gap-12 lg:gap-16">
+          <div className="flex justify-center md:justify-end">
+            <div className="relative aspect-[4/5] w-full max-w-[300px] overflow-hidden sm:max-w-[360px] md:max-w-[390px] lg:max-w-[430px]">
               <Image
                 src="/me.png"
                 alt="Louise"
                 fill
                 priority
-                sizes="(max-width: 640px) 280px, (max-width: 1024px) 460px, 50vw"
+                sizes="(max-width: 640px) 300px, (max-width: 1024px) 390px, 430px"
                 className="object-cover object-[center_18%] grayscale"
               />
             </div>
           </div>
 
-          <div className="mx-auto max-w-[560px] text-center lg:mx-0 lg:max-w-[520px] lg:text-left">
-            <h2 className="mb-5 text-[clamp(2.2rem,10vw,3.75rem)] font-extrabold leading-tight text-[#344754] lg:mb-8 lg:text-6xl">
-              Meet the Developer
+          <div className="mx-auto max-w-[520px] pb-2 text-left md:mx-0 md:pb-7 lg:pb-10">
+            <h2 className="mb-5 whitespace-nowrap text-[clamp(2.15rem,8.6vw,4.15rem)] font-extrabold leading-none text-[#344754] md:mb-7">
+              Louise Soledad
             </h2>
 
-            <p className="text-base leading-[1.75] text-[#66737b] sm:text-lg lg:text-xl lg:leading-[1.9]">
-              I&apos;m Louise, a Computer Science graduate with a passion for building meaningful and impactful technology. 
+            <p className="max-w-[500px] text-lg leading-[1.75] text-[#55626b] sm:text-xl lg:text-2xl lg:leading-[1.8] font-medium">
+              I&apos;m a Computer Science graduate with a passion for building meaningful and impactful technology. 
               I have experience in web development and machine learning-based systems, which helped me strengthen my problem-solving and system design skills.
             </p>
+
+            <div className="mt-8 flex flex-nowrap gap-x-5 text-xs font-bold lowercase tracking-[0.08em] text-[#8a9398] sm:mt-10">
+              {aboutLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="whitespace-nowrap transition-colors hover:text-[#344754]"
+                >
+                  {link.label} ↗
+                </a>
+              ))}
+            </div>
           </div>
+        </div>
+
+        <div className="w-full mt-16 sm:mt-20 lg:mt-24">
+          <AboutStats />
         </div>
       </div>
     </section>

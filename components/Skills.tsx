@@ -111,33 +111,37 @@ const contributionTone = [
 
 function GitHubContributions() {
   return (
-    <div className="w-full">
-      <div className="overflow-x-auto pb-1">
-        <div className="w-max">
-          <div className="flex items-start justify-between gap-8 text-[#8a9398]">
-            <span className="text-base font-bold uppercase tracking-[0.08em] text-[#344754] sm:text-lg lg:text-xl">github</span>
+    <div className="flex w-full justify-center pt-6 sm:pt-8">
+      <div className="w-full max-w-[860px]  pt-8 text-left sm:pt-12">
+        <div className="inline-flex w-fit max-w-full flex-col">
+          <div className="flex items-center justify-between text-[#8a9398] sm:gap-8 w-full">
+            <span className="text-lg font-extrabold uppercase tracking-[0.08em] text-[#344754] sm:text-xl lg:text-2xl">
+              github
+            </span>
             <a
               href="https://github.com/Louisesoledad"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs uppercase tracking-[0.08em] transition-colors hover:text-[#344754]"
+              className="text-xs font-bold uppercase tracking-[0.08em] transition-colors hover:text-[#344754] sm:text-sm"
             >
               @LOUISESOLEDAD /
             </a>
           </div>
 
-          <div className="mt-5 grid grid-flow-col grid-rows-7 gap-1.5">
-            {contributionLevels.flatMap((week, weekIndex) =>
-              week.map((level, dayIndex) => (
-                <span
-                  key={`${weekIndex}-${dayIndex}`}
-                  className={`h-2.5 w-2.5 rounded-full ${contributionTone[level]}`}
-                />
-              )),
-            )}
+          <div className="mt-6 flex justify-start">
+            <div className="grid grid-flow-col grid-rows-7 gap-[clamp(0.18rem,0.4vw,0.42rem)]">
+              {contributionLevels.flatMap((week, weekIndex) =>
+                week.map((level, dayIndex) => (
+                  <span
+                    key={`${weekIndex}-${dayIndex}`}
+                    className={`h-[clamp(0.32rem,1.3vw,0.8rem)] w-[clamp(0.32rem,1.3vw,0.8rem)] rounded-full ${contributionTone[level]}`}
+                  />
+                ))
+              )}
+            </div>
           </div>
 
-          <p className="mt-4 text-sm leading-[1.75] text-[#66737b] sm:text-base lg:text-lg lg:leading-[1.9]">
+          <p className="mt-5 text-sm font-semibold leading-[1.75] text-[#66737b] sm:text-base lg:text-lg lg:leading-[1.9]">
             166 contributions in the last year
           </p>
         </div>
@@ -152,17 +156,10 @@ export default function Skills() {
       id="skills"
       className="relative min-h-screen overflow-hidden bg-[#ececec]"
     >
-      <div
-        className="absolute -left-[34vw] -top-[30vw] hidden h-[76vw] w-[76vw] rounded-full bg-[#c7cdd0] sm:block lg:-left-[23.6vw] lg:-top-[48vw] lg:h-[58vw] lg:w-[58vw]"
-        style={{
-          backgroundImage:
-            "radial-gradient(rgba(255,255,255,.85) 1.5px, transparent 1.5px)",
-          backgroundSize: "18px 18px",
-        }}
-      />
+
 
       <div
-        className="absolute -right-[34vw] -top-[12vw] h-[78vw] w-[78vw] rounded-full sm:-right-[28vw] lg:-right-[20vw] lg:-top-[18vw] lg:h-[62vw] lg:w-[62vw]"
+        className="absolute -right-[30vw] -top-[36vw] h-[78vw] w-[78vw] rounded-full sm:-right-[24vw] lg:-right-[19.5vw] lg:-top-[26vw] lg:h-[62vw] lg:w-[62vw]"
         style={{
           background:
             "linear-gradient(90deg, #e4e7e8 0%, #9ba5ab 45%, #263941 100%)",
@@ -173,29 +170,29 @@ export default function Skills() {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-[1400px] px-4 py-10 sm:px-10 sm:py-24 lg:px-10 lg:py-24">
-        <div className="mx-auto max-w-[1120px] text-left">
-          <h2 className="text-base font-bold uppercase tracking-[0.08em] text-[#344754] sm:text-lg lg:text-xl">
-            Tech stack
+      <div className="relative z-10 mx-auto max-w-[1400px] px-4 py-16 sm:px-10 sm:py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-[860px] text-left">
+          <h2 className="text-[clamp(2.15rem,8.6vw,4.15rem)] font-extrabold leading-none text-[#344754]">
+            Tech Stack
           </h2>
 
-          <p className="mt-3 max-w-[680px] text-sm leading-[1.75] text-[#66737b] sm:text-base lg:text-lg lg:leading-[1.9]">
+          <p className="mt-4 max-w-[680px] text-base leading-[1.75] text-[#66737b] sm:text-lg lg:text-xl lg:leading-[1.9]">
             Technologies and tools I use to build modern system experiences.
           </p>
         </div>
 
-        <div className="mx-auto mt-8 max-w-[1120px] space-y-9 sm:mt-14 sm:space-y-11 lg:mt-16">
+        <div className="mx-auto mt-12 max-w-[860px] space-y-10 text-left sm:mt-16 sm:space-y-12 lg:mt-20">
           {skillGroups.map((group) => (
             <div key={group.category}>
-              <h3 className="text-xs font-bold uppercase tracking-[0.08em] text-[#8a9398]">
+              <h3 className="text-sm font-extrabold uppercase tracking-[0.08em] text-[#8a9398] sm:text-base lg:text-lg">
                 {group.category}
               </h3>
 
-              <div className="mt-4 flex flex-wrap gap-2.5 sm:gap-3">
+              <div className="mt-5 flex flex-wrap justify-start gap-3 sm:gap-4">
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-md border border-[#cfd4d7] bg-transparent px-3.5 py-2 text-xs text-[#4d5960] transition-colors hover:border-[#8d9aa1] sm:px-4 sm:text-sm"
+                    className="rounded-lg border border-[#cfd4d7] bg-transparent px-4.5 py-2.5 text-sm font-semibold text-[#4d5960] transition-all hover:border-[#344754] hover:bg-[#344754]/5 sm:px-5 sm:py-3 sm:text-base"
                   >
                     {skill}
                   </span>

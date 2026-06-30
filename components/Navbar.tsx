@@ -21,11 +21,11 @@ export default function Navbar() {
     <header className="pointer-events-none absolute inset-x-0 top-0 z-50 flex justify-center px-4 pt-5 sm:pt-6">
       <nav className="pointer-events-auto relative flex h-[58px] w-full max-w-[980px] items-center justify-between rounded-full border border-white/55 bg-[#d8d8d7]/82 px-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.55),inset_0_-2px_0_rgba(19,34,45,0.08),0_16px_38px_rgba(20,35,45,0.16)] backdrop-blur-xl sm:px-4">
         <Link
-  href="/#home"
-  aria-label="Louise home"
-  className="grid h-10 w-10 shrink-0 place-items-center transition hover:-translate-y-0.5"
-  onClick={() => setIsMenuOpen(false)}
->
+          href="/#home"
+          aria-label="Louise home"
+          className="grid h-10 w-10 shrink-0 place-items-center transition hover:-translate-y-0.5"
+          onClick={() => setIsMenuOpen(false)}
+        >
           <Image
             src="/logo2.png"
             alt=""
