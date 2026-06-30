@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 const stats = [
   {
-    value: "03+",
+    value: "03",
     label: "PROJECTS",
     caption: "Built",
   },

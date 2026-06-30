@@ -14,6 +14,19 @@ export default function About() {
       id="about"
       className="relative min-h-screen overflow-hidden bg-[#ececec]"
     >
+      <div
+        className="absolute left-0 top-0 hidden w-[70%] h-[700px] lg:block pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(38, 57, 65, 0.22) 2px, transparent 2.2px)",
+          backgroundSize: "21px 19px",
+          backgroundPosition: "10px 10px",
+          WebkitMaskImage:
+            "radial-gradient(circle at 0% 0%, black 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.1) 60%, transparent 80%)",
+          maskImage:
+            "radial-gradient(circle at 0% 0%, black 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.1) 60%, transparent 80%)",
+        }}
+      />
 
       <div
         className="absolute -bottom-[34vw] -right-[30vw] h-[78vw] w-[78vw] rounded-full sm:-right-[24vw] lg:-bottom-[36vw] lg:-right-[19.5vw] lg:h-[62vw] lg:w-[62vw]"
