@@ -53,11 +53,117 @@ export default function Project() {
   return (
     <section
       id="projects"
-      className="relative flex min-h-screen items-center justify-center bg-[#DCDCDD] px-4 py-16 sm:px-6 lg:px-8"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#DCDCDD] px-4 py-16 sm:px-6 lg:px-8"
     >
+      {/* ── Background dot pattern with fade ── */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(54,69,79,.12) 1px, transparent 1px)",
+          backgroundSize: "16px 16px",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
+          maskImage:
+            "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
+        }}
+      />
+
+      {/* ── Fading dot grids (Localised clouds) ── */}
+      <div
+        className="absolute left-[2%] top-[5%] hidden w-[50%] h-[500px] lg:block pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(76, 92, 104, 0.16) 2px, transparent 2.2px)",
+          backgroundSize: "21px 19px",
+          WebkitMaskImage:
+            "radial-gradient(circle at 0% 0%, black 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.1) 60%, transparent 80%)",
+          maskImage:
+            "radial-gradient(circle at 0% 0%, black 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.1) 60%, transparent 80%)",
+        }}
+      />
+      <div
+        className="absolute right-[2%] bottom-[5%] hidden w-[50%] h-[500px] lg:block pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(76, 92, 104, 0.16) 2px, transparent 2.2px)",
+          backgroundSize: "21px 19px",
+          WebkitMaskImage:
+            "radial-gradient(circle at 100% 100%, black 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.1) 60%, transparent 80%)",
+          maskImage:
+            "radial-gradient(circle at 100% 100%, black 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.1) 60%, transparent 80%)",
+        }}
+      />
+
+      {/* ── Broken circle outlines (same style as Skills) ── */}
+      <div
+        className="absolute left-[8%] top-[15%] h-[150px] w-[150px] rounded-full pointer-events-none"
+        style={{
+          border: "2.5px solid rgba(124,132,140,.28)",
+          WebkitMaskImage:
+            "conic-gradient(black 0deg, black 110deg, transparent 110deg, transparent 240deg, black 240deg, black 310deg, transparent 310deg)",
+          maskImage:
+            "conic-gradient(black 0deg, black 110deg, transparent 110deg, transparent 240deg, black 240deg, black 310deg, transparent 310deg)",
+        }}
+      />
+      <div
+        className="absolute right-[12%] top-[25%] hidden h-[180px] w-[180px] rounded-full sm:block pointer-events-none"
+        style={{
+          border: "2px solid rgba(124,132,140,.24)",
+          WebkitMaskImage:
+            "conic-gradient(transparent 0deg, transparent 40deg, black 40deg, black 160deg, transparent 160deg, transparent 280deg, black 280deg, black 340deg, transparent 340deg)",
+          maskImage:
+            "conic-gradient(transparent 0deg, transparent 40deg, black 40deg, black 160deg, transparent 160deg, transparent 280deg, black 280deg, black 340deg, transparent 340deg)",
+        }}
+      />
+      <div
+        className="absolute left-[22%] bottom-[18%] hidden h-[130px] w-[130px] rounded-full lg:block pointer-events-none"
+        style={{
+          border: "2px solid rgba(124,132,140,.25)",
+          WebkitMaskImage:
+            "conic-gradient(transparent 0deg, transparent 30deg, black 30deg, black 130deg, transparent 130deg)",
+          maskImage:
+            "conic-gradient(transparent 0deg, transparent 30deg, black 30deg, black 130deg, transparent 130deg)",
+        }}
+      />
+      <div
+        className="absolute right-[6%] bottom-[15%] h-[160px] w-[160px] rounded-full pointer-events-none"
+        style={{
+          border: "2.5px solid rgba(124,132,140,.26)",
+          WebkitMaskImage:
+            "conic-gradient(black 0deg, black 80deg, transparent 80deg, transparent 190deg, black 190deg, black 260deg, transparent 260deg)",
+          maskImage:
+            "conic-gradient(black 0deg, black 80deg, transparent 80deg, transparent 190deg, black 190deg, black 260deg, transparent 260deg)",
+        }}
+      />
+      <div
+        className="absolute left-[45%] top-[8%] h-[80px] w-[80px] rounded-full pointer-events-none"
+        style={{
+          border: "2px solid rgba(124,132,140,.32)",
+          WebkitMaskImage:
+            "conic-gradient(transparent 0deg, transparent 60deg, black 60deg, black 180deg, transparent 180deg)",
+          maskImage:
+            "conic-gradient(transparent 0deg, transparent 60deg, black 60deg, black 180deg, transparent 180deg)",
+        }}
+      />
+
       <div className="relative z-10 w-full max-w-[1600px]">
         {/* Outer wrapper — no overflow clip so the last card can stick outside */}
         <div className="relative mx-auto w-full max-w-[1400px]">
+          {/* Header Title + View All Link */}
+          <div className="flex items-end justify-between w-full mb-8 sm:mb-10 lg:mb-12">
+            <h2 className="text-[clamp(1.75rem,5vw,3rem)] font-extrabold leading-none text-[#36454F] uppercase tracking-tight">
+              Featured Projects
+            </h2>
+            <Link
+              href="/projects"
+              className="group inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-widest text-[#36454F] transition-colors duration-300 hover:text-[#4C5C68] active:scale-95 sm:text-sm translate-y-1.5"
+            >
+              View All Projects
+              <span className="text-base transition-transform duration-300 group-hover:translate-x-1.5">→</span>
+            </Link>
+          </div>
+
           {/* Main container with clipped corners for background */}
           <div
             className="relative overflow-hidden rounded-[32px] shadow-[0_32px_64px_rgba(0,0,0,0.25)] sm:rounded-[40px] lg:rounded-[48px]"

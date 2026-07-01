@@ -49,7 +49,7 @@ export default function ScrollControls() {
           onClick={scrollToTop}
           aria-label="Scroll to top"
           title="Scroll to top"
-          className="grid h-11 w-11 place-items-center rounded-full border border-white/35 bg-[#172630]/88 text-white shadow-[0_14px_34px_rgba(0,0,0,0.28)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white hover:text-[#233239] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
+          className="grid h-11 w-11 place-items-center rounded-full border border-white/35 bg-[#172630]/88 text-white shadow-[0_14px_34px_rgba(0,0,0,0.28)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white hover:text-[#233239] cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
         >
           <FaArrowUp className="h-4 w-4" />
         </button>
@@ -61,7 +61,7 @@ export default function ScrollControls() {
           onClick={scrollToBottom}
           aria-label="Scroll to bottom"
           title="Scroll to bottom"
-          className="grid h-11 w-11 place-items-center rounded-full border border-white/35 bg-[#172630]/88 text-white shadow-[0_14px_34px_rgba(0,0,0,0.28)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white hover:text-[#233239] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
+          className="grid h-11 w-11 place-items-center rounded-full border border-white/35 bg-[#172630]/88 text-white shadow-[0_14px_34px_rgba(0,0,0,0.28)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white hover:text-[#233239] cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
         >
           <FaArrowDown className="h-4 w-4" />
         </button>

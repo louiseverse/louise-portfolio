@@ -29,6 +29,18 @@ html {
   scroll-behavior: smooth;
 }
 
+button,
+a,
+nav,
+nav *,
+[role="button"],
+.cursor-pointer,
+.cursor-pointer * {
+  cursor: pointer !important;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 .loading-screen-active,
 .loading-screen-active body {
   overflow: hidden;

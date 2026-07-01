@@ -87,7 +87,7 @@ function ProjectGallery({
           onClick={() => onNavigate(-1)}
           aria-label="Previous image"
           disabled={total <= 1}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-[#C5C3C6] text-[#4C5C68] transition-all duration-200 hover:border-[#36454F] hover:bg-[#36454F] hover:text-white disabled:opacity-30 sm:h-11 sm:w-11"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-[#C5C3C6] text-[#4C5C68] transition-all duration-200 hover:border-[#36454F] hover:bg-[#36454F] hover:text-white cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed sm:h-11 sm:w-11"
         >
           ←
         </button>
@@ -115,7 +115,7 @@ function ProjectGallery({
           onClick={() => onNavigate(1)}
           aria-label="Next image"
           disabled={total <= 1}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-[#C5C3C6] text-[#4C5C68] transition-all duration-200 hover:border-[#36454F] hover:bg-[#36454F] hover:text-white disabled:opacity-30 sm:h-11 sm:w-11"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-[#C5C3C6] text-[#4C5C68] transition-all duration-200 hover:border-[#36454F] hover:bg-[#36454F] hover:text-white cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed sm:h-11 sm:w-11"
         >
           →
         </button>

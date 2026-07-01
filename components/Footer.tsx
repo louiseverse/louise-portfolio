@@ -10,7 +10,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative -mt-px overflow-hidden bg-[#233239] px-6 text-white sm:px-10">
+    <footer className="relative -mt-px overflow-hidden bg-[#36454F] px-6 text-white sm:px-10">
       <div
         className="absolute -left-[1rem] top-[0.5rem] h-[28rem] w-[28rem] rounded-full bg-[#40535d]/58"
         style={{
@@ -21,7 +21,7 @@ export default function Footer() {
         }}
       />
       <div
-        className="absolute right-[-21.1rem] top-[-35rem] hidden h-[44vw] w-[44vw] rounded-full bg-[#40535d]/45 lg:block"
+        className="absolute right-[-21.1rem] top-[-35rem] hidden h-[44vw] w-[44vw] rounded-full bg-[#4C5C68]/45 lg:block"
         style={{
           WebkitMaskImage:
             "radial-gradient(circle at 100% 0%, transparent 0%, transparent 23%, rgba(0,0,0,.15) 28%, rgba(0,0,0,.45) 34%, black 42%)",

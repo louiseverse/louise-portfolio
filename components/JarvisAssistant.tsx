@@ -707,7 +707,7 @@ export default function JarvisAssistant() {
                 onClick={handleSend}
                 title="Send message"
                 aria-label="Send message"
-                className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-white/70 transition hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200"
+                className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-white/70 transition hover:bg-white/10 hover:text-white cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-200"
               >
                 <FaPaperPlane className="h-3.5 w-3.5" />
               </button>
@@ -727,7 +727,7 @@ export default function JarvisAssistant() {
           aria-label={isActive ? `AI assistant, ${mode}` : "Activate AI assistant"}
           aria-pressed={isActive}
           title={isActive && mode !== "idle" ? "Stop assistant" : "Talk to assistant"}
-          className={`relative grid h-16 w-16 place-items-center overflow-hidden rounded-full border bg-[#172630] shadow-[0_0_36px] transition duration-300 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200 ${accentClass} ${
+          className={`relative grid h-16 w-16 place-items-center overflow-hidden rounded-full border bg-[#172630] shadow-[0_0_36px] transition duration-300 hover:scale-105 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200 ${accentClass} ${
             isActive && !prefersReducedMotion ? "animate-[assistantPulse_2.4s_ease-in-out_infinite]" : ""
           }`}
         >

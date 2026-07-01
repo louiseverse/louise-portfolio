@@ -87,7 +87,7 @@ export default function Navbar() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen((open) => !open)}
-          className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#263941] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_8px_18px_rgba(38,57,65,0.22)] transition hover:bg-[#1f313b] md:hidden"
+          className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#263941] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_8px_18px_rgba(38,57,65,0.22)] transition hover:bg-[#1f313b] cursor-pointer md:hidden"
         >
           {isMenuOpen ? <FiX className="h-5 w-5" /> : <FiMenu className="h-5 w-5" />}
         </button>
