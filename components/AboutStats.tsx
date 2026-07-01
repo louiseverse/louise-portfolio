@@ -6,18 +6,15 @@ import { useRef } from "react";
 const stats = [
   {
     value: "03",
-    label: "PROJECTS",
-    caption: "Built",
+    label: "Projects Built",
   },
   {
-    value: "160+",
-    label: "GIT COMMITS",
-    caption: null,
+    value: "169",
+    label: "Git Commits",
   },
   {
-    value: "10+",
-    label: "TECH STACK",
-    caption: null,
+    value: "29",
+    label: "Tech Stack",
   },
 ];
 
@@ -52,37 +49,33 @@ export default function AboutStats() {
       variants={containerVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="w-full border-y border-[#cfd4d7] py-12 sm:py-14 lg:py-16"
+      className="w-full border-y border-[#4C5C68]/60 py-6 sm:py-8 lg:py-10"
     >
-      <div className="grid grid-cols-1 sm:grid-cols-3">
+      <div className="flex flex-col sm:flex-row items-stretch justify-between w-full">
         {stats.map((stat, index) => (
-          <motion.div
-            key={stat.label}
-            variants={itemVariants}
-            whileHover={{ y: -4, transition: { duration: 0.3, ease: "easeOut" } }}
-            className={`group flex flex-col items-center justify-center py-8 text-center transition-all duration-300 sm:py-10 ${
-              index !== stats.length - 1
-                ? "border-b border-[#cfd4d7] sm:border-b-0 sm:border-r"
-                : ""
-            }`}
-          >
-            {/* Number */}
-            <span className="text-2xl font-black leading-none tracking-tight text-[#344754] transition-colors duration-300 group-hover:text-[#263941] sm:text-3xl lg:text-4xl">
-              {stat.value}
-            </span>
-
-            {/* Label */}
-            <span className="mt-2 text-xs font-extrabold uppercase tracking-[0.14em] text-[#8a9398] sm:text-sm">
-              {stat.label}
-            </span>
-
-            {/* Optional caption */}
-            {stat.caption && (
-              <span className="mt-1 text-xs font-medium lowercase tracking-[0.06em] text-[#aab3b8]">
-                {stat.caption}
+          <div key={stat.label} className="flex-1 flex items-center justify-center">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ y: -4, transition: { duration: 0.3, ease: "easeOut" } }}
+              className="relative flex items-center justify-center w-full py-4 text-center group cursor-default"
+            >
+              {/* Huge Background Number */}
+              <span className="select-none text-[6.5rem] sm:text-[8rem] lg:text-[10rem] font-black leading-none text-[#C5C3C6]/60 tracking-tighter transition-all duration-300 group-hover:scale-105">
+                {stat.value}
               </span>
+
+              {/* Foreground Label (Centered overlay) */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <span className="text-base sm:text-lg lg:text-xl font-extrabold tracking-wide text-[#36454F] whitespace-nowrap">
+                  {stat.label}
+                </span>
+              </div>
+            </motion.div>
+
+            {index < stats.length - 1 && (
+              <div className="hidden sm:block w-[1px] h-20 bg-[#4C5C68]/40 self-center" />
             )}
-          </motion.div>
+          </div>
         ))}
       </div>
     </motion.div>

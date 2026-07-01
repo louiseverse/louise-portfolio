@@ -14,7 +14,7 @@ export default function Home() {
           <Skills />
         </div>
 
-        <div className="relative z-10 shadow-[0_-32px_80px_rgba(5,12,16,0.24)]">
+        <div className="relative z-10">
           <Project />
         </div>
       </section>

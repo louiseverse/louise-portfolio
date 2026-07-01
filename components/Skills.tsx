@@ -1,3 +1,7 @@
+"use client";
+
+import Image from "next/image";
+
 const skillGroups = [
   {
     category: "Frontend",
@@ -44,7 +48,6 @@ const skillGroups = [
       "GitHub",
       "GitHub Actions",
       "VS Code",
-      "Prettier",
       "Vercel",
       "Adobe Photoshop",
       "Blender",
@@ -53,108 +56,69 @@ const skillGroups = [
   },
 ];
 
-const contributionPattern: Record<string, number> = {
-  "6-4": 2,
-  "9-3": 3,
-  "9-4": 4,
-  "35-5": 1,
-  "36-4": 2,
-  "36-6": 3,
-  "37-0": 2,
-  "37-1": 1,
-  "38-0": 2,
-  "38-1": 2,
-  "40-4": 3,
-  "41-6": 2,
-  "42-0": 3,
-  "42-1": 2,
-  "42-2": 4,
-  "42-3": 3,
-  "42-5": 2,
-  "43-0": 4,
-  "43-1": 3,
-  "43-2": 2,
-  "43-3": 4,
-  "43-4": 2,
-  "43-5": 1,
-  "44-1": 3,
-  "44-2": 2,
-  "44-4": 1,
-  "44-6": 3,
-  "45-0": 2,
-  "45-2": 3,
-  "45-3": 2,
-  "45-6": 4,
-  "46-0": 2,
-  "47-3": 1,
-  "49-5": 1,
-  "50-5": 2,
-  "51-0": 2,
-  "51-1": 1,
-  "51-2": 3,
+const iconMap: Record<string, string> = {
+  JavaScript: "javascript.png",
+  TypeScript: "typescript.png",
+  React: "react.png",
+  "Next.js": "nextjs.png",
+  HTML: "html.png",
+  CSS: "css.png",
+  "Tailwind CSS": "tailwindcss.png",
+  Vite: "vite.png",
+
+  "Node.js": "nodejs.png",
+  Python: "python.png",
+  FastAPI: "fastapi.png",
+  Firebase: "firebase.png",
+  MySQL: "mysql.png",
+
+  TensorFlow: "tensorflow.png",
+  MediaPipe: "mediapipe.png",
+  OpenCV: "opencv.png",
+  Transformers: "transformers.png",
+  OpenAI: "openai.png",
+  "Hugging Face": "huggingface.png",
+  "Claude code": "claude.png",
+  Codex: "codex.png",
+
+  Git: "git.png",
+  GitHub: "github.png",
+  "GitHub Actions": "githubactions.png",
+  "VS Code": "vscode.png",
+  Vercel: "vercel.png",
+  "Adobe Photoshop": "photoshop.png",
+  Blender: "blender.png",
+  WordPress: "wordpress.png",
 };
 
-const contributionLevels = Array.from({ length: 52 }, (_, week) =>
-  Array.from(
-    { length: 7 },
-    (_, day) => contributionPattern[`${week}-${day}`] ?? 0,
-  ),
-);
+/* ─── Reusable Skill Item ─── */
 
-const contributionTone = [
-  "bg-transparent",
-  "bg-[#9ba5ab]",
-  "bg-[#66737b]",
-  "bg-[#344754]",
-  "bg-[#263941]",
-];
-
-function GitHubContributions() {
+function SkillItem({ icon, label }: { icon: string; label: string }) {
   return (
-    <div className="flex w-full justify-center pt-6 sm:pt-8">
-      <div className="w-full max-w-[860px]  pt-8 text-left sm:pt-12">
-        <div className="inline-flex w-fit max-w-full flex-col">
-          <div className="flex items-center justify-between text-[#8a9398] sm:gap-8 w-full">
-            <span className="text-lg font-extrabold uppercase tracking-[0.08em] text-[#344754] sm:text-xl lg:text-2xl">
-              github
-            </span>
-            <a
-              href="https://github.com/Louisesoledad"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-bold uppercase tracking-[0.08em] transition-colors hover:text-[#344754] sm:text-sm"
-            >
-              @LOUISESOLEDAD /
-            </a>
-          </div>
-
-          <div className="mt-6 flex justify-start">
-            <div className="grid grid-flow-col grid-rows-7 gap-[clamp(0.18rem,0.4vw,0.42rem)]">
-              {contributionLevels.flatMap((week, weekIndex) =>
-                week.map((level, dayIndex) => (
-                  <span
-                    key={`${weekIndex}-${dayIndex}`}
-                    className={`h-[clamp(0.32rem,1.3vw,0.8rem)] w-[clamp(0.32rem,1.3vw,0.8rem)] rounded-full ${contributionTone[level]}`}
-                  />
-                ))
-              )}
-            </div>
-          </div>
-
-          <p className="mt-5 text-sm font-semibold leading-[1.75] text-[#66737b] sm:text-base lg:text-lg lg:leading-[1.9]">
-            166 contributions in the last year
-          </p>
-        </div>
+    <div className="group flex flex-col items-center gap-2.5 sm:gap-3">
+      <div className="flex h-14 w-14 items-center justify-center transition-transform duration-[250ms] ease-out group-hover:-translate-y-1 group-hover:scale-[1.08] sm:h-16 sm:w-16 lg:h-20 lg:w-20">
+        <Image
+          src={`/skills/${icon}`}
+          alt={label}
+          width={80}
+          height={80}
+          className="object-contain"
+        />
       </div>
+      <span className="text-[13px] font-semibold text-[#4C5C68] transition-colors duration-[250ms] ease-out group-hover:text-[#36454F] sm:text-sm lg:text-[15px] text-center">
+        {label}
+      </span>
     </div>
   );
 }
+
+/* ─── Skills Section ─── */
 
 export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative min-h-screen overflow-hidden bg-[#ececec]"
+      className="relative min-h-screen overflow-hidden bg-[#DCDCDD]"
     >
 
 
@@ -162,7 +126,7 @@ export default function Skills() {
         className="absolute -right-[30vw] -top-[36vw] h-[78vw] w-[78vw] rounded-full sm:-right-[24vw] lg:-right-[19.5vw] lg:-top-[26vw] lg:h-[62vw] lg:w-[62vw]"
         style={{
           background:
-            "linear-gradient(90deg, #e4e7e8 0%, #9ba5ab 45%, #263941 100%)",
+            "linear-gradient(90deg, #DCDCDD 0%, #899097 45%, #36454F 100%)",
           WebkitMaskImage:
             "radial-gradient(circle at 0% 50%, transparent 0%, transparent 23%, rgba(0,0,0,.15) 28%, rgba(0,0,0,.45) 34%, black 42%)",
           maskImage:
@@ -171,37 +135,34 @@ export default function Skills() {
       />
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-4 py-16 sm:px-10 sm:py-24 lg:px-10 lg:py-28">
-        <div className="mx-auto max-w-[860px] text-left">
-          <h2 className="text-[clamp(2.15rem,8.6vw,4.15rem)] font-extrabold leading-none text-[#344754]">
+        <div className="mx-auto max-w-[860px] text-center">
+          <h2 className="text-[clamp(2.15rem,8.6vw,4.15rem)] font-extrabold leading-none text-[#36454F]">
             Tech Stack
           </h2>
 
-          <p className="mt-4 max-w-[680px] text-base leading-[1.75] text-[#66737b] sm:text-lg lg:text-xl lg:leading-[1.9]">
+          <p className="mx-auto mt-4 max-w-[680px] text-base leading-[1.75] text-[#4C5C68] sm:text-lg lg:text-xl lg:leading-[1.9]">
             Technologies and tools I use to build modern system experiences.
           </p>
         </div>
 
-        <div className="mx-auto mt-12 max-w-[860px] space-y-10 text-left sm:mt-16 sm:space-y-12 lg:mt-20">
+        <div className="mx-auto mt-12 max-w-[860px] space-y-12 sm:mt-16 sm:space-y-14 lg:mt-20 lg:space-y-16">
           {skillGroups.map((group) => (
             <div key={group.category}>
-              <h3 className="text-sm font-extrabold uppercase tracking-[0.08em] text-[#8a9398] sm:text-base lg:text-lg">
+              <h3 className="text-center text-sm font-extrabold uppercase tracking-[0.12em] text-[#899097] sm:text-base lg:text-lg">
                 {group.category}
               </h3>
 
-              <div className="mt-5 flex flex-wrap justify-start gap-3 sm:gap-4">
+              <div className="mx-auto mt-8 grid max-w-[500px] grid-cols-3 gap-x-4 gap-y-8 sm:mt-10 sm:max-w-[760px] sm:grid-cols-5 sm:gap-x-6 sm:gap-y-10 lg:max-w-[860px] lg:grid-cols-5 lg:gap-x-8 lg:gap-y-12">
                 {group.skills.map((skill) => (
-                  <span
+                  <SkillItem
                     key={skill}
-                    className="rounded-lg border border-[#cfd4d7] bg-transparent px-4.5 py-2.5 text-sm font-semibold text-[#4d5960] transition-all hover:border-[#344754] hover:bg-[#344754]/5 sm:px-5 sm:py-3 sm:text-base"
-                  >
-                    {skill}
-                  </span>
+                    icon={iconMap[skill] ?? ""}
+                    label={skill}
+                  />
                 ))}
               </div>
             </div>
           ))}
-
-          <GitHubContributions />
         </div>
       </div>
     </section>

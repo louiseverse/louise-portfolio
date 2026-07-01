@@ -12,13 +12,13 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative min-h-screen overflow-hidden bg-[#ececec]"
+      className="relative min-h-screen overflow-hidden bg-[#DCDCDD]"
     >
       <div
         className="absolute left-0 top-0 hidden w-[70%] h-[700px] lg:block pointer-events-none"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(38, 57, 65, 0.22) 2px, transparent 2.2px)",
+            "radial-gradient(circle, rgba(76, 92, 104, 0.22) 2px, transparent 2.2px)",
           backgroundSize: "21px 19px",
           backgroundPosition: "10px 10px",
           WebkitMaskImage:
@@ -32,7 +32,7 @@ export default function About() {
         className="absolute -bottom-[34vw] -right-[30vw] h-[78vw] w-[78vw] rounded-full sm:-right-[24vw] lg:-bottom-[36vw] lg:-right-[19.5vw] lg:h-[62vw] lg:w-[62vw]"
         style={{
           background:
-            "linear-gradient(90deg, #e4e7e8 0%, #9ba5ab 45%, #263941 100%)",
+            "linear-gradient(90deg, #DCDCDD 0%, #899097 45%, #36454F 100%)",
           WebkitMaskImage:
             "radial-gradient(circle at 0% 50%, transparent 0%, transparent 23%, rgba(0,0,0,.15) 28%, rgba(0,0,0,.45) 34%, black 42%)",
           maskImage:
@@ -56,23 +56,23 @@ export default function About() {
           </div>
 
           <div className="mx-auto max-w-[520px] pb-2 text-left md:mx-0 md:pb-7 lg:pb-10">
-            <h2 className="mb-5 whitespace-nowrap text-[clamp(2.15rem,8.6vw,4.15rem)] font-extrabold leading-none text-[#344754] md:mb-7">
+            <h2 className="mb-5 whitespace-nowrap text-[clamp(2.15rem,8.6vw,4.15rem)] font-extrabold leading-none text-[#36454F] md:mb-7">
               Louise Soledad
             </h2>
 
-            <p className="max-w-[500px] text-lg leading-[1.75] text-[#55626b] sm:text-xl lg:text-2xl lg:leading-[1.8] font-medium">
+            <p className="max-w-[500px] text-lg leading-[1.75] text-[#4C5C68] sm:text-xl lg:text-2xl lg:leading-[1.8] font-medium">
               I&apos;m a Computer Science graduate with a passion for building meaningful and impactful technology. 
               I have experience in web development and machine learning-based systems, which helped me strengthen my problem-solving and system design skills.
             </p>
 
-            <div className="mt-8 flex flex-nowrap gap-x-5 text-xs font-bold lowercase tracking-[0.08em] text-[#8a9398] sm:mt-10">
+            <div className="mt-8 flex flex-nowrap gap-x-5 text-xs font-bold lowercase tracking-[0.08em] text-[#899097] sm:mt-10">
               {aboutLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   target={link.href.startsWith("http") ? "_blank" : undefined}
                   rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="whitespace-nowrap transition-colors hover:text-[#344754]"
+                  className="whitespace-nowrap transition-colors hover:text-[#36454F]"
                 >
                   {link.label} ↗
                 </a>
